@@ -1,21 +1,37 @@
 import React from "react"
-import { Link } from "gatsby"
+import {  useStaticQuery, graphql, Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allHnStory(limit: 10) {
+        edges {
+          node {
+            title
+          }
+        }
+      }
+    }
+  `);
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <ul style={{ listStyle: "none" }}>
+      {data.allHnStory.edges.map(({ node }) => {
+        return (
+          <Link key={node.id} style={ { textDecoration: 'none' } } to={`/item/${node.id}`}>
+            <li style={{ backgroundColor: 'aliceblue', padding: '10px'}}>
+              {node.title}
+            </li>
+          </Link>
+        )
+      })}
+      </ul>
+    </Layout>
+  )
+}
 
 export default IndexPage

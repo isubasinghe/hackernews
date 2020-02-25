@@ -5314,6 +5314,15 @@ gatsby-source-filesystem@^2.1.46:
     valid-url "^1.0.9"
     xstate "^4.7.2"
 
+gatsby-source-hacker-news@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/gatsby-source-hacker-news/-/gatsby-source-hacker-news-2.2.2.tgz#9fa734b6120b7103164992200e1dabb720bd9f27"
+  integrity sha512-yVuIxAW/LojnG0fr5Nq2zDBTOAH5nlepd386AtPxz4FH+rvt8P0D7e1kny55t1caJnRfJpVFmg3zarcbRXfeNA==
+  dependencies:
+    "@babel/runtime" "^7.7.6"
+    axios "^0.19.0"
+    lodash "^4.17.15"
+
 gatsby-telemetry@^1.1.47:
   version "1.1.47"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-1.1.47.tgz#680c071cde9682f2daf5301b37d1376077157300"
