@@ -7,7 +7,7 @@ import SEO from "../components/seo";
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     {
-      allHnStory(limit: 10) {
+      allHnStory(limit: 100) {
         edges {
           node {
             title

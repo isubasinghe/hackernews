@@ -6,7 +6,7 @@ exports.createPages = async ({ graphql, actions }) => {
     graphql(
       `
         {
-          allHnStory(sort: { fields: [order] }, limit: 10) {
+          allHnStory(sort: { fields: [order] }, limit: 100) {
             edges {
               node {
                 id
